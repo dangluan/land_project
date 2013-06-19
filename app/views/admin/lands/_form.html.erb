@@ -9,9 +9,12 @@
 		<%= f.input :land_status, label: "Tiến độ"%>
 		<%= f.input :price, label: "Giá"%>
 		<%= f.input :description, as: :html_editor, label: "Chi tiết"%>
-		<%= file_field_tag('land_attachments_asset', multiple: true, name: "land[attachments_attributes][][asset]")%>
+		<li class="file input optional stringish">
+			<label class="label">Upload Gallery</label>
+			<%= file_field_tag('land_attachments_asset', multiple: true, name: "land[attachments_attributes][][asset]")%>
+		</li>
 		<li class="string input optional stringish">
-			<label class="label"></label>
+			<label class="label">Map</label>
 			<%= show_map_helper @land, {zoom: 15, latitude: 10.823099, longitude: 106.629664, allow: 'point', searchbox: 'show', width: 400, height: 200, searchbox_width: 300} %>
 		</li>
 	<% end%>

@@ -1,4 +1,5 @@
 ActiveAdmin.register Category do
+  menu :parent => "Lands"
   action_item :only => :show do
     link_to('Add New',  new_admin_category_path)
   end
