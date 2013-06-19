@@ -1,0 +1,21 @@
+<%= google_map_api_js("AIzaSyA344yCug0-GhjW3XJyZmkLWLN_qtA_ziM") %>
+<%= semantic_form_for [:admin, @land], html: { multipart: true } do |f| %>
+  <%= f.inputs do%>
+  	<%= f.input :category_id, as: :select, collection: Category.all, prompt: true%>
+		<%= f.input :title, label: "Tên"%>
+		<li><label></label><%= image_tag @land.avatar.url(:thumb) if @land and @land.avatar.file?%></li>
+		<%= f.input :avatar, as: :file%>
+		<%= f.input :land_position_text, label: "Vị trí" %>
+		<%= f.input :land_status, label: "Tiến độ"%>
+		<%= f.input :price, label: "Giá"%>
+		<%= f.input :description, as: :html_editor, label: "Chi tiết"%>
+		<%= file_field_tag('land_attachments_asset', multiple: true, name: "land[attachments_attributes][][asset]")%>
+		<li class="string input optional stringish">
+			<label class="label"></label>
+			<%= show_map_helper @land, {zoom: 15, latitude: 10.823099, longitude: 106.629664, allow: 'point', searchbox: 'show', width: 400, height: 200, searchbox_width: 300} %>
+		</li>
+	<% end%>
+	<%= f.actions do %>
+		<%= f.submit%>
+	<% end%>
+<% end %>

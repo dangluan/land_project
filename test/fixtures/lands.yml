@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  land_position_text: MyString
+  land_status: MyString
+  price: 9.99
+  description: MyText
+  category_id: MyString
+
+two:
+  title: MyString
+  land_position_text: MyString
+  land_status: MyString
+  price: 9.99
+  description: MyText
+  category_id: MyString

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= google_map_api_js("AIzaSyBaAPECK5m4MLk3NB74Lzg_rRFBD8Kwuhg") %>
+</head>
+<body>
+	<div id="page-wrap">
+		<%= render :partial => "/shared/header"%>
+		<div class="main-content">
+			<div class="inner-container">
+				<div id="left_banner">
+					<%= render :partial => "/shared/left_banner"%>
+				</div><!-- end #left-banner -->
+				<div class="middle-container">
+					
+					<div id="stage">
+						<%= yield %>
+					</div>
+					<div class="divider"></div>
+					<div class="trademarks"></div>
+					<div class="recent-post"></div>					
+				</div>
+				<div id="right_banner">
+					<%= render :partial => "/shared/right_banner"%>
+				</div>
+			</div>
+		</div>
+		
+		<div id="feed_back"><a href="#" class="feedback"></a></div>
+		
+		<%= render :partial => '/shared/footer' %>
+		
+	</div> <!--end #page-wrap -->
+</body>
+</html>

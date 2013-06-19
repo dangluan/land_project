@@ -1,0 +1,45 @@
+<div class="container land-container">
+	<div id="slides">
+	<% @lands.each_slice(4) do |slice|%>
+		<div class="list-items">
+			<% slice.each do |land|%>
+				<div class="item">
+					<div class="item-img">
+						<%= image_tag land.avatar.url(:thumb) if land.avatar.file? %>
+					</div>
+					
+					<div class="item-info">
+						<div class="title">
+							<%= land.title %>
+						</div>
+						<div class="price-tag">
+							<span class="title">Price :</span><span class="price"><%= land.price %> tr/m2</span>
+						</div>
+						<div class="item-footer">
+							<a class="btn-small fancy-link" href="#" data-url="/clients/<%= land.id %>/land_detail">chi tiết</a>
+							<a class="btn-small fancy-link" href="#" data-url="/clients/<%= land.id %>/show_map">địa điểm</a>
+							<a class="btn-small fancy-album-link" href="#" data-album="<%= land.land_album_photo %>">hình ảnh</a>					
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<%end%>
+	</div>
+</div>
+
+
+<script language="JavaScript">
+    $(function() {
+      $('#slides').slidesjs({
+        width: 570,
+        height: 630,
+        play: {
+          active: true,
+          auto: false,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+  </script>

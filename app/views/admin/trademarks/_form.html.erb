@@ -1,0 +1,12 @@
+<%= semantic_form_for [:admin, @trademark], html: { multipart: true } do |f| %>
+  <%= f.inputs do%>
+		<%= f.input :name%>
+		<li class="file input optional stringish">
+			<label class="label" for="trademark_asset">Upload</label>
+			<%= file_field_tag('trademark_attachments_asset', multiple: true, name: "trademark[attachments_attributes][][asset]")%>
+		</li>
+	<% end%>
+	<%= f.actions do %>
+		<%= f.submit%>
+	<% end%>
+<% end %>
