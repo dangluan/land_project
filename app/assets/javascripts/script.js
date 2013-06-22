@@ -16,23 +16,21 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	$("body").on({
-    ajaxStart: function() { 
-        $(this).addClass("ajax-loading"); 
-    },
-    ajaxStop: function() { 
-        $(this).removeClass("ajax-loading"); 
-    }    
-	});
+	// $("body").on({
+    // ajaxStart: function() { 
+        // $(this).addClass("ajax-loading"); 
+    // },
+    // ajaxStop: function() { 
+        // $(this).removeClass("ajax-loading"); 
+    // }    
+	// });
 	
 	$(document.body).delegate('li.nav', 'click', function(e){
 		$('li.nav').removeClass('selected');
 		$('div.menu-left').addClass("hidden");
 		if($(this).hasClass("activity")){
-			console.log("yes");
 			$("div.menu-left").removeClass("hidden");
 		}
-		console.log("no");
 		$(this).addClass('selected');
 		var dom = $(this).attr('data-load-element');
 		var url = $(this).attr('data-url');
@@ -73,11 +71,17 @@ $(document).ready(function(){
 	});
 	
 	$(document.body).delegate(".fancy-album-link", 'click', function(){
-		var arr_photo = new Array(); 
-		arr_photo = eval($(this).attr("data-album"));
-		if(arr_photo.length > 0){
-			$.fancybox(arr_photo);
-		}
+		 var data = $(this).attr("data-images");
+		 $('#slides').slidesjs({
+        width: 570,
+        height: 630,
+        play: {
+          active: true,
+          auto: false,
+          interval: 4000,
+          swap: true
+        }
+     });
 		return false;
 	});
 	

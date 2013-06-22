@@ -3,8 +3,7 @@
   <%= f.inputs do%>
   	<%= f.input :category_id, as: :select, collection: Category.all, prompt: true%>
 		<%= f.input :title, label: "Tên"%>
-		<li><label></label><%= image_tag @land.avatar.url(:thumb) if @land and @land.avatar.file?%></li>
-		<%= f.input :avatar, as: :file%>
+		<%= f.input :avatar, as: :file,  :hint => f.template.image_tag(f.object.avatar.url(:thumb))%>
 		<%= f.input :land_position_text, label: "Vị trí" %>
 		<%= f.input :land_status, label: "Tiến độ"%>
 		<%= f.input :price, label: "Giá"%>
@@ -12,6 +11,13 @@
 		<li class="file input optional stringish">
 			<label class="label">Upload Gallery</label>
 			<%= file_field_tag('land_attachments_asset', multiple: true, name: "land[attachments_attributes][][asset]")%>
+			<p class="inline-hints">
+				<% if @land && @land.attachments %>
+					<% @land.attachments.each do |at|%>
+						<%= image_tag at.asset.url(:small) if at.asset.file?%>
+					<% end%>
+				<% end%>
+			</p>
 		</li>
 		<li class="string input optional stringish">
 			<label class="label">Map</label>

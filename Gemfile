@@ -26,6 +26,7 @@ gem 'gmpoint', git: "git@github.com:dangluan/gmpoint.git"
 gem "bourbon"
 gem "paperclip", "~> 3.0"
 gem 'active_admin_editor'
+gem "just-datetime-picker"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

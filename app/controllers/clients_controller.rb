@@ -36,4 +36,19 @@ class ClientsController < ApplicationController
       render :action => 'new_contact', layout: false
     end
   end
+  
+  def image_preview
+    @land = Land.find(params[:id])
+    render :partial => '/clients/image_preview', :locals => { land: @land }
+  end
+  
+  def show
+    @land = Land.find(params[:id])
+    render :layout => false
+  end
+  
+  def products
+    @products = Section.find_by_code(params[:type]).products
+    render :partial => '/clients/list_products', :locals => { :products => @products }
+  end
 end

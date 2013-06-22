@@ -1,4 +1,4 @@
-<%= semantic_form_for contact ,url: "/clients/add_contact" , remote: true, html: {class: "client-form" , method: "post"} do |f|%>
+<%= semantic_form_for contact ,url: "/clients/add_contact" , remote: true, html: {class: "client-form" , method: "post", :onsubmit => "transferContentFromTinyEditor();"} do |f|%>
 		<%= f.inputs do %>
 			<%= f.input :full_name%>
 			<%= f.input :phone%>
@@ -6,7 +6,7 @@
 				<label for="contact_email" class=" label">Email</label>
 				<input type="text" name="contact[email]" maxlength="255" id="contact_email">
 			</li>
-			<%= f.input :content, label: ""%>
+			<%= f.input :content, label: false %>
 		<% end%>
 		<%= f.actions do %>
 			<li class="submit">
@@ -15,3 +15,29 @@
 			</li>
 	  <% end %>	
 <% end %>
+
+<script language='javascript'>
+  $(document).ready(function(){
+        window.newContentEditor = new TINY.editor.edit('editor', {
+         id: 'contact_content',
+         width: 530,
+         height: 175,
+         cssclass: 'tinyeditor',
+         controlclass: 'tinyeditor-control',
+         rowclass: 'tinyeditor-header',
+         dividerclass: 'tinyeditor-divider',
+         controls: ['bold', 'italic', 'underline', 'strikethrough', '|', 'subscript', 'superscript', '|',
+         'orderedlist', 'unorderedlist', '|', 'outdent', 'indent', '|', 'leftalign',
+         'centeralign', 'rightalign', 'blockjustify', '|', 'unformat', '|', 'undo', 'redo', 'n',
+            'size', 'style', '|', 'image', 'hr', 'link', 'unlink', '|', 'print'],
+         footer: true,
+         fonts: ['Verdana','Arial','Georgia','Trebuchet MS'],
+         xhtml: true,
+         cssfile: '/assets/tinyeditor.css',
+         bodyid: 'editor',
+         footerclass: 'tinyeditor-footer',
+         toggle: {text: 'source', activetext: 'wysiwyg', cssclass: 'toggle'},
+         resize: {cssclass: 'resize'}
+       });
+  });
+</script>

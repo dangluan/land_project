@@ -16,9 +16,9 @@
 							<span class="title">Price :</span><span class="price"><%= land.price %> tr/m2</span>
 						</div>
 						<div class="item-footer">
-							<a class="btn-small fancy-link" href="#" data-url="/clients/<%= land.id %>/land_detail">chi tiết</a>
+							<a class="btn-small dynamic-link" href="#" data-url="/clients/<%= land.id %>/show">chi tiết</a>
 							<a class="btn-small fancy-link" href="#" data-url="/clients/<%= land.id %>/show_map">địa điểm</a>
-							<a class="btn-small fancy-album-link" href="#" data-album="<%= land.land_album_photo %>">hình ảnh</a>					
+							<a class="btn-small fancy-link" href="#" data-url="/clients/image_preview?id=<%= land.id %>">hình ảnh</a>			
 						</div>
 					</div>
 				</div>
@@ -42,4 +42,4 @@
         }
       });
     });
-  </script>
+</script>

@@ -2,9 +2,17 @@
   <%= f.inputs do%>
 		<%= f.input :name%>
 		<li class="file input optional stringish">
-			<label class="label" for="trademark_asset">Upload</label>
+			<label class="label" for="trademark_asset">Upload trademarks</label>
 			<%= file_field_tag('trademark_attachments_asset', multiple: true, name: "trademark[attachments_attributes][][asset]")%>
+			<p class="inline-hints">
+				<% if @trademark && @trademark.attachments %>
+					<% @trademark.attachments.each do |at|%>
+						<%= image_tag at.asset.url(:small) if at.asset.file?%>
+					<% end%>
+				<% end%>
+			</p>
 		</li>
+		<%= f.input :trade_position, as: :select, collection: [["None", 'none'], ["Bottom", 'bottom'], ['Left', 'left'], ['Right', 'right']], prompt: true%>
 	<% end%>
 	<%= f.actions do %>
 		<%= f.submit%>

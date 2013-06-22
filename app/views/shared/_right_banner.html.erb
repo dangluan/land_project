@@ -3,12 +3,28 @@
 <div class="supports base-box">
 	<h3 class="ads-title">Supports</h3>
 	<br />
-	<a href = 'ymsgr:sendim?jdangluan'>
-  	<img src='http://opi.yahoo.com/online?u=jdangluan&m=g&t=14'/>
-	</a>      
+	<% supports = Support.all %>
+	<ul>
+	<% supports.each do |sup|%>
+		<li>
+			<a href = 'ymsgr:sendim?<%= sup.nick_name%>'>
+		  	<img src='http://opi.yahoo.com/online?u=<%= sup.nick_name %>&m=g&t=1'/>
+			</a>
+			<span><%= sup.supporter_name if sup%></span>
+		</li>
+	<% end%>
+	</ul>
+	<br />
+	     
 </div>
 <br />
 <div class="ads-banner base-box">
 	<h3 class="ads-title">Liên Hệ Quảng Cáo</h3>
 	<p class="phone-n">01696828130</p>
+</div>
+<br />
+<div class="left-trademarks">
+	<% if @trades_right = Trademark.get_trademarks("right")%>
+		<%= render :partial => "/shared/right_trademarks", locals: {trades_right: @trades_right}%>
+	<% end%>
 </div>

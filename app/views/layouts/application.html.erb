@@ -6,10 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= google_map_api_js("AIzaSyBaAPECK5m4MLk3NB74Lzg_rRFBD8Kwuhg") %>
+  
 </head>
 <body>
 	<div id="page-wrap">
 		<%= render :partial => "/shared/header"%>
+		<div class="land-news">
+			<%= render :partial => "/shared/show_news_latest"%>
+		</div>
 		<div class="main-content">
 			<div class="inner-container">
 				<div id="left_banner">
@@ -21,8 +25,10 @@
 						<%= yield %>
 					</div>
 					<div class="divider"></div>
-					<div class="trademarks">
-						<%= render :partial => "/shared/bottom_trademarks"%>
+					<div class="bottom-trademarks">
+						<% if @trades_bottom = Trademark.get_trademarks("bottom")%>
+							<%= render :partial => "/shared/bottom_trademarks", locals: {trades_bottom: @trades_bottom}%>
+						<% end%>
 					</div>
 					<div class="recent-post"></div>					
 				</div>
@@ -31,11 +37,28 @@
 				</div>
 			</div>
 		</div>
-		
-		<div id="feed_back"><a href="#" class="feedback"></a></div>
+		<!-- <div id="feed_back"><a href="#" class="feedback"></a></div> -->
+		<div class="footer-actions">
+			<ul>
+				<li class="client-icon-phone"></li>
+				<li class="client-icon-mail"></li>
+				<li class="client-icon-share"></li>
+				<li class="fb-like client-icon-like" data-href="http://localhost:3000" data-send="false" data-width="1" data-show-faces="false"></li>
+				
+			</ul>
+		</div>
 		
 		<%= render :partial => '/shared/footer' %>
 		
 	</div> <!--end #page-wrap -->
+	<script language="JavaScript">
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 </body>
 </html>

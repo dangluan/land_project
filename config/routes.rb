@@ -1,5 +1,8 @@
 LandProject::Application.routes.draw do
-
+  
+  get '/clients/products', controller: :clients, action: :products
+  get '/clients/:id/show', controller: :clients, action: :show
+  get '/clients/image_preview', controller: :clients, action: :image_preview
   post '/clients/add_contact', controller: :clients, action: :add_contact
   get '/clients/new_contact', controller: :clients, action: :new_contact
   get '/clients/feed_back', controller: :clients, action: :feed_book

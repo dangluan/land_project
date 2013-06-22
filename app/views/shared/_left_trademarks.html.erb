@@ -1,0 +1,12 @@
+<div class="right-left-trademark-container land-container">
+	<div id="trade-slides">
+	<% puts trades_left%>
+	<% trades_left.each_slice(3) do |slice|%>
+		<ul class="list-trade">
+			<% slice.each do |img|%>
+				<li><%= image_tag img %></li>
+			<% end %>
+		</div>
+		<%end%>
+	</div>
+</div>

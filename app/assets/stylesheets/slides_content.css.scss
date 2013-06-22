@@ -1,3 +1,5 @@
+@import "bourbon";
+
 .land-container{ 
     a.slidesjs-navigation{
       display: none !important;
@@ -150,3 +152,128 @@
       }
     }
 }
+
+
+div.image-preview{
+  width: 500px;
+  height: 350px;
+}
+
+div.no-data{
+  background: none repeat scroll 0 0 #F3F3F3;
+  height: 100px;
+  padding: 30px;
+  text-align: center;
+  width: 300px;
+  div.text{
+    border: 3px dashed #999999;
+    border-radius: 0px 0px 3px 3px;
+    font-weight: bold;
+    margin: 15px auto;
+    padding: 20px;
+    width: 200px;
+  }
+}
+
+div.wrapper-detail{
+  width: 96%;
+  margin: 0px auto;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px #ccc;
+  border-radius: 3px;
+  h3{
+    @include linear-gradient(to bottom, #44C5EC, #259BDB);
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    padding: 5px 0px;
+    // @include linear-gradient(-90deg, #EFEFEF, #DFE1E2);
+    border-color: #E6E6E6 -moz-use-text-color #CDCDCD #D4D4D4;
+    
+  }  
+  div.detail{
+    width: 96%;
+    padding: 10px;
+    min-height: 400px;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    
+    div.header-info{
+      margin-bottom: 20px;
+      div.item-info{
+        
+        @include clearfix;
+        border-bottom: 1px solid #ccc;
+        margin: 3px 0;
+        padding: 3px 0 3px 10px;
+        width: 95%;
+        span.label{
+          float: left;
+          width: 60px;
+          text-align: right;
+        }
+        span.text{
+          float: left;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+/** bottom trademarks*/
+div.bottom-trademarks{
+  width: 570px;
+  float: left;
+  display: block;
+  div.bottom-trademark-container{
+    margin: 0px auto;
+    width: 550px;
+    div.trade-slides{
+      position: relative;
+      div.slidesjs-container{
+        width: 487px !important;
+        margin: 0px auto;
+        ul{
+          display: inline;
+          @include clearfix;
+          list-style: none;
+          li{
+            float: left;
+            img{
+              border: 5px solid #123456;
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+      ul.slidesjs-pagination{
+          display: none !important;
+        }
+        
+        a.slidesjs-navigation{
+          display: block !important;
+        }
+        
+        a.slidesjs-previous{
+          position: absolute;
+          top: 35px ;
+          left: 0px;
+        }
+        a.slidesjs-next{
+          position: absolute;
+          top: 35px;
+          right: -7px;
+        }
+        a.slidesjs-play{
+          display: none !important;
+        }
+        a.slidesjs-stop{
+          display: none !important;
+        }
+        
+    }
+  }
+}
+

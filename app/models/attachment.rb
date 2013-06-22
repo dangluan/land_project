@@ -1,6 +1,9 @@
 class Attachment < ActiveRecord::Base
-  # attr_accessible :title, :body
   attr_accessible :asset
   belongs_to :attachable, :polymorphic => true
-  has_attached_file :asset, :styles => {:thumb => "500x300#"}
+  has_attached_file :asset,
+                    :styles => {:thumb => "500x300#", :small => "100x120#", :bottom_trade => "150x80#", :right_left_trade => "180x240#"}
+  # has_attached_file :asset, :styles => Proc.new {|attachment| attachment.instance.attachable_type.constantize.image_styles }
+  has_attached_file :asset, :styles => Proc.new {|attachment| attachment.instance.image_styles }
 end
+

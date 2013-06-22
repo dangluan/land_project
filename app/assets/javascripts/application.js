@@ -13,9 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require locations
-//= require jquery.fancybox
-//= require jquery.fancybox.pack
 //= require jquery.mousewheel-3.0.6.pack
-//= require jquery.slides
+//= require jquery.fancybox-1.3.4.pack
+//= require jquery.easing-1.3.pack
+//= require jquery.slides.min
+//= require jquery.ticker
 //= require script
-
+//= require tiny.editor
+//= require tiny.editor.packed

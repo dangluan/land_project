@@ -1,0 +1,26 @@
+<% if land.attachments.count > 0 %>
+<div class="image-preview land-container">
+		<% land.attachments.each do |at|%>		
+				<% if at.asset.file?%>
+					<%= image_tag at.asset.url(:thumb)%>
+				<% end%>
+		<% end%>	
+</div>
+<% else %>
+		<div class="no-data"><div class="text">Upload gallery for this land</div></div>
+<% end%>
+
+<script language="JavaScript">
+    $(function() {
+      $('.image-preview').slidesjs({
+        width: 500,
+        height: 300,
+        play: {
+          active: true,
+          auto: false,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+</script>

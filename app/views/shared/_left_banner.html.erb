@@ -34,6 +34,10 @@
             Xuất Nhập Khẩu
             <span class="vnav-counter">42</span>
           </a>
+          <ul class="vnav-subnav">
+            <li class="active dynamic-link" data-url="/clients/products" data-load-element="" data-method="GET" data-type="import"><a href="#">Sản phẩm XK <span class="vnav-counter">16</span></a></li>
+            <li class="dynamic-link" data-url="/clients/products" data-load-element="" data-method="GET" data-type="export"><a href="#" class="active">Sản phẩm NK <span class="vnav-counter">23</span></a></li>
+          </ul>
         </li>
         <li>
           <a href="#" class="vnav-item">
@@ -51,8 +55,14 @@
   </div>
  <br />
 </div> <!-- end # menu-left -->
-
+<br />
 <div class="ads-banner base-box">
 	<h3 class="ads-title">Liên Hệ Quảng Cáo</h3>
 	<p class="phone-n">1696828130</p>
+</div>
+<br />
+<div class="left-trademarks">
+	<% if @trades_left = Trademark.get_trademarks("left")%>
+		<%= render :partial => "/shared/left_trademarks", locals: {trades_left: @trades_left}%>
+	<% end%>
 </div>

@@ -1,0 +1,17 @@
+<div class="wrapper-detail">
+	<h3><%= @land.title %></h3>
+	
+	<div class="detail">
+		<div class="header-info">
+			<div class="item-info"><span class="label">Vị trí :</span><span class="text"><%= @land.land_position_text %></span></div>
+			<div class="item-info"><span class="label">Tiến độ :</span><span class="text"><%= @land.land_status %></span></div>
+			<div class="item-info"><span class="label">Giá :</span><span class="text"><%= @land.price %></span></div>
+		</div>
+		<div class="content">
+			<%= raw @land.description %>
+		</div>
+		<div class="fb-comments" data-href="http://localhost:3000" data-width="470" data-num-posts="10"></div>
+		<div id="fb-root"></div>
+		
+	</div>
+</div>

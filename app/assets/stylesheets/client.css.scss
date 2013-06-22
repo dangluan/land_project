@@ -25,6 +25,85 @@
   text-align: center;
   width: 24px;
 }
+
+div.land-news{
+  width: 100%;
+  height: 20px;
+}
+
+div.supports {
+  ul{
+    li{
+      @include clearfix;
+      margin: 5px;
+      height: 20px;
+      a{
+        float: left;
+        padding-left: 5px;
+      }
+      span{
+        float: left;
+        margin: 8px 0px 0px 5px;
+        font-size: 10px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+div.footer-actions{
+  border-radius: 5px 0 0 0;
+  bottom: 73px;
+  box-shadow: -1px -1px 5px #CCCCCC;
+  height: 253px;
+  position: fixed;
+  right: -4px;
+  width: 68px;
+  z-index: 1000;
+  ul {
+    @include clearfix;
+    list-style: none;
+    display: inline;
+    li {
+      cursor: pointer;
+      float: left;
+      &.client-icon-phone{
+        background-position: 0px 0px;
+        &:hover {
+          background-position: 0px -72px;
+        }
+      }
+      &.client-icon-mail{
+        background-position: -62px 0px;
+        &:hover {
+          background-position: -62px -72px;
+        }
+      }
+      &.client-icon-share{
+        background-position: -124px 0px;
+        &:hover {
+          background-position: -124px -72px;
+        }
+      }
+      &.client-icon-like{
+        background-position: -185px 0px;
+        &:hover {
+          background-position: -185px -72px;
+        }
+      }
+    }
+  }
+}
+
+[class*="client-icon-"] {
+  display: block;
+  width: 65px;
+  height: 61px;
+  background-image: url('/assets/footer-action-icons.png');
+  background-repeat: no-repeat;
+}
+
+
 div.thank-wrapper{
   border: 1px solid #CCCCCC;
   box-shadow: 1px 1px 3px #B0B0B0;
@@ -217,7 +296,7 @@ div.host-items{
 
 div.base-box{
   width: 178px;
-  height: 100px;
+  min-height: 100px;
   border: 1px solid #ccc;
   border-radius: 3px;
   h3{

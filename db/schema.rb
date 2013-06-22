@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619164646) do
+ActiveRecord::Schema.define(:version => 20130622101810) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,6 +73,22 @@ ActiveRecord::Schema.define(:version => 20130619164646) do
     t.datetime "updated_at",                       :null => false
   end
 
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
   create_table "lands", :force => true do |t|
     t.string   "title"
     t.string   "land_position_text"
@@ -91,10 +107,42 @@ ActiveRecord::Schema.define(:version => 20130619164646) do
     t.datetime "avatar_updated_at"
   end
 
-  create_table "trademarks", :force => true do |t|
+  create_table "products", :force => true do |t|
     t.string   "name"
+    t.decimal  "price"
+    t.datetime "date_of_manufacture"
+    t.datetime "date_of_expiration"
+    t.text     "description",                :limit => 4294967295
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+    t.string   "product_image_file_name"
+    t.string   "product_image_content_type"
+    t.integer  "product_image_file_size"
+    t.datetime "product_image_updated_at"
+    t.integer  "section_id"
+    t.string   "manufacturer"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "supports", :force => true do |t|
+    t.string   "nick_name"
+    t.string   "supporter_name"
+    t.integer  "phone"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "trademarks", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "trade_position"
   end
 
 end

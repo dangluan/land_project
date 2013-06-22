@@ -1,0 +1,26 @@
+<%= semantic_form_for [:admin, @product], html: { multipart: true } do |f| %>
+  <%= f.inputs do%>
+  	<%= f.input :section_id, as: :select, collection: Section.all, prompt: true%>
+		<%= f.input :name, label: "Tên"%>
+		<%= f.input :product_image, as: :file,  :hint => f.template.image_tag(f.object.product_image.url(:thumb))%>
+		<%= f.input :date_of_manufacture, as: :just_datetime_picker, label: "Ngày sản xuất" %>
+		<%= f.input :date_of_expiration, as: :just_datetime_picker, label: "Hạn sử dụng"%>
+		<%= f.input :manufacturer, label: "Nhà sản xuất"%>
+		<%= f.input :price, label: "Giá"%>
+		<%= f.input :description, as: :html_editor, label: "Chi tiết"%>
+		<li class="file input optional stringish">
+			<label class="label">Upload Gallery</label>
+			<%= file_field_tag('product_attachments_asset', multiple: true, name: "product[attachments_attributes][][asset]")%>
+			<p class="inline-hints">
+				<% if @product && @product.attachments %>
+					<% @product.attachments.each do |at|%>
+						<%= image_tag at.asset.url(:small) if at.asset.file?%>
+					<% end%>
+				<% end%>
+			</p>
+		</li>
+	<% end%>
+	<%= f.actions do %>
+		<%= f.submit%>
+	<% end%>
+<% end %>
