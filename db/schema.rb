@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623100954) do
+ActiveRecord::Schema.define(:version => 20130623140455) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20130623100954) do
     t.string   "land_status"
     t.decimal  "price"
     t.text     "description",         :limit => 4294967295
-    t.string   "category_id"
+    t.integer  "category_id",         :limit => 255
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.float    "location_latitude"
