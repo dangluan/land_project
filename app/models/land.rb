@@ -11,7 +11,7 @@ class Land < ActiveRecord::Base
     cate = Category.find_by_code(land_type)
     size = 0
     if cate
-      size = cate.lands.count
+      size += cate.lands.count
     end
     size
   end
