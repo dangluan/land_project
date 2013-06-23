@@ -46,12 +46,7 @@ gem "just-datetime-picker"
 
 # To use debugger
 # gem 'debugger'
-group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+
 gem 'thin'
 gem 'heroku'
 
