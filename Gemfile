@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
 gem 'rack', '~> 1.4.5'
@@ -26,7 +26,7 @@ end
 
 gem 'activeadmin'
 gem 'jquery-rails', '2.0.3'
-gem 'gmpoint', git: "git@github.com:dangluan/gmpoint.git"
+gem 'gmpoint'
 gem "bourbon"
 gem "paperclip", "~> 3.0"
 gem 'active_admin_editor'

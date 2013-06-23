@@ -1,12 +1,3 @@
-GIT
-  remote: git@github.com:dangluan/gmpoint.git
-  revision: 0df2b8c09ab62f5863c68cc02e76b3a10ca0884b
-  specs:
-    gmpoint (0.1.2)
-      geocoder
-      jeweler (~> 1.8.4)
-      new_responds_to_parent
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -89,7 +80,9 @@ GEM
     formtastic (2.2.1)
       actionpack (>= 3.0)
     geocoder (1.1.8)
-    git (1.2.5)
+    gmpoint (0.0.9)
+      geocoder
+      new_responds_to_parent
     has_scope (0.5.1)
     heroku (2.39.4)
       heroku-api (~> 0.3.7)
@@ -104,11 +97,6 @@ GEM
     inherited_resources (1.4.0)
       has_scope (~> 0.5.0)
       responders (~> 0.9)
-    jeweler (1.8.4)
-      bundler (~> 1.0)
-      git (>= 1.2.5)
-      rake
-      rdoc
     journey (1.0.4)
     jquery-rails (2.0.3)
       railties (>= 3.1.0, < 5.0)
@@ -211,7 +199,7 @@ DEPENDENCIES
   activeadmin
   bourbon
   coffee-rails (~> 3.2.1)
-  gmpoint!
+  gmpoint
   heroku
   jquery-rails (= 2.0.3)
   just-datetime-picker
