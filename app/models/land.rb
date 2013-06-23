@@ -9,9 +9,11 @@ class Land < ActiveRecord::Base
   
   def self.land_count(land_type)
     cate = Category.find_by_code(land_type)
+    size = 0
     if cate
-      return cate.lands.count
+      size = cate.lands.count
     end
+    size
   end
   
   def land_album_photo
