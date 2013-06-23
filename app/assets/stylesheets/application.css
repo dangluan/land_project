@@ -15,7 +15,7 @@
  *= require formtastic-customize
  *= require client
  *= require jquery.fancybox-1.3.4
- *= require ticker-style.
+ *= require ticker-style
  *= require active_admin/editor/wysiwyg
  *= require tinyeditor
  */
