@@ -1,10 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~> 3.2.13'
+gem 'rack', '~> 1.4.5'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'mysql2'
 gem 'sqlite3'
 
 
@@ -20,6 +23,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 gem 'activeadmin'
 gem 'jquery-rails', '2.0.3'
 gem 'gmpoint', git: "git@github.com:dangluan/gmpoint.git"
@@ -27,6 +31,7 @@ gem "bourbon"
 gem "paperclip", "~> 3.0"
 gem 'active_admin_editor'
 gem "just-datetime-picker"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -49,3 +54,11 @@ group :production do
 end
 gem 'thin'
 gem 'heroku'
+
+
+# This version needs to be hardcoded for OpenShift compatibility
+gem 'thor', '= 0.14.6'
+
+# This needs to be installed so we can run Rails console on OpenShift directly
+gem 'minitest'
+
