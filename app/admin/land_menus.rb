@@ -1,3 +1,3 @@
 ActiveAdmin.register LandMenu do
-  menu :parent => "Menus"
+  menu :label => "Menu", :parent => "Menus", :priority => 1
 end

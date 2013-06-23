@@ -91,33 +91,33 @@
 
     .slidesjs-pagination li a.active,
     .slidesjs-pagination li a:hover.active {
-      background-position: 0 -13px
+      background-position: 0 -13px;
     }
 
     .slidesjs-pagination li a:hover {
-      background-position: 0 -26px
+      background-position: 0 -26px;
     }
 
     #slides a:link,
     #slides a:visited {
-      color: #333
+      color: #333;
     }
 
     #slides a:hover,
     #slides a:active {
-      color: #9e2020
+      color: #9e2020;
     }
 
     .navbar {
-      overflow: hidden
+      overflow: hidden;
     }
     
     #slides {
-      display: none
+      display: none;
     }
 
     .container {
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     /* For tablets & smart phones */
@@ -127,28 +127,28 @@
         padding-right: 20px;
       }
       .container {
-        width: auto
+        width: auto;
       }
     }
 
     /* For smartphones */
     @media (max-width: 480px) {
       .container {
-        width: auto
+        width: auto;
       }
     }
 
     /* For smaller displays like laptops */
     @media (min-width: 768px) and (max-width: 979px) {
       .container {
-        width: 724px
+        width: 724px;
       }
     }
 
     /* For larger displays */
     @media (min-width: 1200px) {
       .container {
-        width: 1170px
+        width: 1170px;
       }
     }
 }
