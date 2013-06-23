@@ -1,4 +1,4 @@
-RailsApp::Application.configure do
+LandProject::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -34,5 +34,5 @@ RailsApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  Paperclip.options[:command_path] = "C:\Program Files\ImageMagick-6.8.5-Q16"
+  #Paperclip.options[:command_path] = "C:\Program Files\ImageMagick-6.8.5-Q16"
 end
