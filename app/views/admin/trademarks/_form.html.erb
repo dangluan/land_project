@@ -4,13 +4,19 @@
 		<li class="file input optional stringish">
 			<label class="label" for="trademark_asset">Upload trademarks</label>
 			<%= file_field_tag('trademark_attachments_asset', multiple: true, name: "trademark[attachments_attributes][][asset]")%>
-			<p class="inline-hints">
+				<ul>
 				<% if @trademark && @trademark.attachments %>
 					<% @trademark.attachments.each do |at|%>
-						<%= image_tag at.asset.url(:small) if at.asset.file?%>
+						<li>
+							<%= image_tag at.asset.url(:small) if at.asset.file? %>
+							<a class="destroy-link" data-url="/admin/trademarks/<%= @trademark.id %>/attachments/<%= at.id %>" data-method="DELETE"><div class="remove-icon"></div></a>
+							<br />
+							<%= link_to "Delete", :_destroy , method: :delete%>						
+						</li>
+						
 					<% end%>
 				<% end%>
-			</p>
+				</ul>
 		</li>
 		<%= f.input :trade_position, as: :select, collection: [["None", 'none'], ["Bottom", 'bottom'], ['Left', 'left'], ['Right', 'right']], prompt: true%>
 	<% end%>

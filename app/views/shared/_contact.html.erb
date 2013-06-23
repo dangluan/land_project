@@ -2,10 +2,11 @@
 		<%= f.inputs do %>
 			<%= f.input :full_name%>
 			<%= f.input :phone%>
-			<li id="contact_email_input" class="string input optional stringish">
+			<li id="contact_email_input" class="string input optional stringish" >
 				<label for="contact_email" class=" label">Email</label>
 				<input type="text" name="contact[email]" maxlength="255" id="contact_email">
 			</li>
+			<br />
 			<%= f.input :content, label: false %>
 		<% end%>
 		<%= f.actions do %>
@@ -20,7 +21,7 @@
   $(document).ready(function(){
         window.newContentEditor = new TINY.editor.edit('editor', {
          id: 'contact_content',
-         width: 530,
+         width: 500,
          height: 175,
          cssclass: 'tinyeditor',
          controlclass: 'tinyeditor-control',

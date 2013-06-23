@@ -2,10 +2,7 @@ class Trademark < ActiveRecord::Base
   attr_accessible :name, :attachments_attributes, :trade_position
   has_many :attachments, :as => :attachable
   accepts_nested_attributes_for :attachments, :allow_destroy => true
-  
-  def image_styles
-      { :bottom_trade => "150x80#"}
-  end
+
   def self.get_trademarks(position)
     trade_arr = Array.new
     trades = self.where(trade_position: position)

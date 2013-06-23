@@ -51,4 +51,8 @@ class ClientsController < ApplicationController
     @products = Section.find_by_code(params[:type]).products
     render :partial => '/clients/list_products', :locals => { :products => @products }
   end
+  
+  def introduce
+    
+  end
 end

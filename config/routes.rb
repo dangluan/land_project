@@ -1,5 +1,6 @@
 LandProject::Application.routes.draw do
   
+  get '/clients/introduce', controller: :clients, action: :introduce
   get '/clients/products', controller: :clients, action: :products
   get '/clients/:id/show', controller: :clients, action: :show
   get '/clients/image_preview', controller: :clients, action: :image_preview

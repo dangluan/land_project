@@ -1,3 +1,4 @@
+<%if trades_bottom.count > 0 %>
 <div class="bottom-trademark-container land-container">
 	<div class="trade-slides">
 	<% trades_bottom.each_slice(3) do |slice|%>
@@ -9,7 +10,7 @@
 		<%end%>
 	</div>
 </div>
-
+<% end%>
 <script language="JavaScript">
     $(function() {
       $('div.trade-slides').slidesjs({

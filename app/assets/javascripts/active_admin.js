@@ -22,3 +22,19 @@ function preventEnterSubmit(e) {
 $('a.button').live('click', function() {
   $('input.datepicker:not(.hasDatepicker)').datepicker();
 });
+
+$(document).ready(function(e){
+	$(document.body).delegate(".destroy-link", 'click', function(){
+		var url = $(this).attr("data-url");
+		var method = $(this).attr("data-method");
+		var dom = $(this).attr("data-load-element");
+		$.ajax({
+			url: url,
+			type: method,
+			success: function(res){
+				$(dom).html(res);
+			}
+		});
+		return false;
+	});
+});

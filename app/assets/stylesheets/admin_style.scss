@@ -1,0 +1,33 @@
+@import "bourbon";
+form.formtastic{
+  fieldset.inputs{
+    ol li{
+      ul {
+        width: 670px; 
+        margin: 10px auto;
+        padding: 10px;
+        @include clearfix;
+        li{
+          float: left;
+          margin-right: 3px;
+          position: relative;
+          img{
+            border: 3px solid #ccc;
+            border-radius: 3px;
+          }
+          a{
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            div.remove-icon{
+              width: 14px;
+              height: 14px;
+              cursor: pointer;
+              background: url("/assets/remove-icon.png") no-repeat scroll 0 0 transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

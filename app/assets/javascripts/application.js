@@ -21,3 +21,5 @@
 //= require script
 //= require tiny.editor
 //= require tiny.editor.packed
+//= require coolclock
+//= require excanvas
