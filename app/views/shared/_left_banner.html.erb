@@ -7,14 +7,14 @@
           <a href="#" class="vnav-item" >
             <i class="icon-friends"></i>
             Cho Thuê BDS
-            <span class="vnav-counter"><%= Land.where(category_id: Category.find_by_code("rent").id).count%></span>
+            <span class="vnav-counter"><%= Land.land_count("rent")%></span>
           </a>
         </li>
         <li class="dynamic-link" data-url="/clients/index" data-load-element="" data-method="GET" data-type="sale">
           <a href="#" class="vnav-item " >
             <i class="icon-video"></i>
             Bán BDS
-            <span class="vnav-counter"><%= Land.where(category_id: Category.find_by_code("sale").id).count%></span>
+            <span class="vnav-counter"><%= Land.land_count("sale")%></span>
           </a>
         </li>
         <li>
