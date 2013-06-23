@@ -6,7 +6,7 @@ class CreateLands < ActiveRecord::Migration
       t.string :land_status
       t.decimal :price
       t.text :description, :limit => 4294967295
-      t.string :category_id
+      t.integer :category_id
 
       t.timestamps
     end
