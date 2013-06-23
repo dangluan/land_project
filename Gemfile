@@ -8,9 +8,10 @@ gem 'rack', '~> 1.4.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'pg'
-ruby '2.0.0'
-
+group :production do
+  gem 'pg'
+  ruby '2.0.0'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

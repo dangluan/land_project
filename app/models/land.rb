@@ -5,10 +5,7 @@ class Land < ActiveRecord::Base
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   
   validates :title, :land_position_text, :land_status, :price, :presence => true
-  
-  def self.image_styles
-    { :thumb => "500x300#"}
-  end
+
   
   def self.land_count(land_type)
     Category.find_by_code(land_type).lands.count
@@ -23,6 +20,6 @@ class Land < ActiveRecord::Base
   end
   
   def self.get_news_land
-    self.order("created_at desc").limit(10)
+    Land.order("created_at desc").limit(10)
   end
 end
