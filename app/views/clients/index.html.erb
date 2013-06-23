@@ -5,15 +5,15 @@
 			<% slice.each do |land|%>
 				<div class="item">
 					<div class="item-img">
-						<%= image_tag land.avatar.url(:thumb) if land.avatar.file? %>
+						<%= image_tag land.avatar.url(:thumb) if land and land.avatar.file? %>
 					</div>
 					
 					<div class="item-info">
 						<div class="title">
-							<%= land.title %>
+							<%= land.title if land%>
 						</div>
 						<div class="price-tag">
-							<span class="title">Price :</span><span class="price"><%= land.price %> tr/m2</span>
+							<span class="title">Price :</span><span class="price"><%= land.price if land%> tr/m2</span>
 						</div>
 						<div class="item-footer">
 							<a class="btn-small dynamic-link" href="#" data-url="/clients/<%= land.id %>/show">chi tiết</a>
