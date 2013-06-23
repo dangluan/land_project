@@ -1,8 +1,8 @@
 
 	<ul id="js-news" class="js-hidden">
-		<% news = Land.get_news_land%>
-		<% news.each do |new|%>
-    	<li class="news-item"><a href="#" class="dynamic-link" data-url="/clients/<%= new.id%>/show" data-method="GET" data-load-element="#stage"><%= new.title %></a></li>
+		<% posts = Land.get_news_land%>
+		<% posts.each do |post|%>
+    	<li class="news-item"><a href="#" class="dynamic-link" data-url="/clients/<%= post.id%>/show" data-method="GET" data-load-element="#stage"><%= post.title %></a></li>
     <% end %>
 	</ul>
 
